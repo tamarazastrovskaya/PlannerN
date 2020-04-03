@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Windows;
 
 
@@ -13,6 +16,10 @@ namespace PlannerN
         {
             logger.LogCritical("Test");
             InitializeComponent();
+
+
         }
+
+       
     }
 }
