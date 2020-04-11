@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PlannerN.Entity
 {
-    [Table("categories")]
-    class Category
+    [Table("tasks")]
+    class Task
     {
         [Key, Column("id")]
         public int Id { get; set; }
@@ -17,12 +17,18 @@ namespace PlannerN.Entity
         public DateTime ExpDate { get; set; }
 
 
-        [Column("description")]
-        public string Description { get; set; }
-
-
         [Column("status")]
         public string Status { get; set; }
 
+
+        [Column("description")]
+        public string Description { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
     }
+
 }

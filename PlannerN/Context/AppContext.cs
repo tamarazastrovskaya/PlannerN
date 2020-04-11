@@ -1,16 +1,13 @@
-﻿using PlannerN.Entity;
-using System.Data.Entity;
-
-namespace PlannerN.Context
+﻿namespace PlannerN.Context
 {
-    class AppContext : DbContext
+    internal class AppContext
     {
+        internal object categories;
+        private string dsn;
 
-        public DbSet<Category> categories { get; set; }
-        public AppContext(string Dsn) : base(Dsn) { }
-
+        public AppContext(string dsn)
+        {
+            this.dsn = dsn;
+        }
     }
-
-
-
 }
