@@ -223,8 +223,10 @@
     <Compile Include="Context\AppContext.cs" />
     <Compile Include="Context\PlannerContext.cs" />
     <Compile Include="Entity\Task.cs" />
-    <Compile Include="Migration\FirstMigration.cs" />
-    <Compile Include="Migration\PlannerContextModelS.cs" />
+    <Compile Include="Migrations\20200411132321_first.cs" />
+    <Compile Include="Migrations\20200411132321_first.designer.cs">
+      <DependentUpon>20200411132321_first.cs</DependentUpon>
+    </Compile>
     <Compile Include="Servise\Logging\Provider\FileLogger.cs" />
     <Compile Include="Servise\Logging\Provider\FileLoggerProvider.cs" />
     <Compile Include="Servise\LogFactory.cs" />
