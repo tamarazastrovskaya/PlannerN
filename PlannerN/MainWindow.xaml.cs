@@ -1,6 +1,5 @@
-﻿using DocumentFormat.OpenXml.Bibliography;
-using DocumentFormat.OpenXml.Drawing.Diagrams;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
+using PlannerN.Entity;
 using System.Collections.Generic;
 using System.Windows;
 
@@ -16,10 +15,18 @@ namespace PlannerN
         {
             logger.LogCritical("Test");
             InitializeComponent();
+            var List = new List<Task>();
+
+            var conn = new Context.PlannerContext();
+            conn.Tasks.Add(new Task() { Description = "Задача" });
+            conn.SaveChanges();
+            // var List = conn.Tasks.ToList<Task>();
+
+            ListView.ItemsSource = List;
 
 
         }
 
-       
+
     }
 }

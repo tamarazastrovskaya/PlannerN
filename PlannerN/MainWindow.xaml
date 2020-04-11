@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PlannerN"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Planner" Height="450" Width="800">
     <Grid>
 
-        <DataGrid x:Name="dgTodoList" FontSize="14" FontWeight="Bold" Margin="10"  AutoGenerateColumns="False">
+        <DataGrid x:Name="ListView" FontSize="14" FontWeight="Bold" Margin="10"  AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path= id}" IsReadOnly="False" Header="Id" Width="30"/>
                 <DataGridTextColumn Binding="{Binding Path= creationDate}" IsReadOnly="True" Header="CreationDate" Width="160"/>
