@@ -11,7 +11,9 @@ namespace PlannerN
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(FirstService firstService, Logger<App> logger)
+        private readonly Logger<App> logger;
+
+        public MainWindow(Logger<App> logger)
         {
             logger.LogCritical("Test");
             InitializeComponent();
@@ -23,8 +25,7 @@ namespace PlannerN
             // var List = conn.Tasks.ToList<Task>();
 
             ListView.ItemsSource = List;
-
-
+            this.logger = logger;
         }
 
 

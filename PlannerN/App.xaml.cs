@@ -11,7 +11,8 @@ namespace PlannerN
     public partial class App : Application
     {
         private const string ConfigPath = "config.ini";
-        private void Application_Startup(object sender, StartupEventArgs e)
+        private void AppStartup(
+            object sender, StartupEventArgs e)
         {
 
             IServiceCollection services = new ServiceCollection();
