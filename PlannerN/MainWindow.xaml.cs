@@ -11,10 +11,11 @@ namespace PlannerN
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly Logger<App> logger;
+        private ILogger<MainWindow> logger;
 
-        public MainWindow(Logger<App> logger)
+        public MainWindow(ILogger<MainWindow> logger)
         {
+            this.logger = logger;
             logger.LogCritical("Test");
             InitializeComponent();
             var List = new List<Task>();
