@@ -9,8 +9,8 @@ using PlannerN.Context;
 namespace PlannerN.Migrations
 {
     [DbContext(typeof(PlannerContext))]
-    [Migration("20200411132321_first")]
-    partial class first
+    [Migration("20200418102056_FirstMigration")]
+    partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
