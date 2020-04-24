@@ -3,43 +3,32 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PlannerN.Migrations
 {
-    public partial class first : Migration
+    public partial class FirstMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<string>(
-                name: "status",
-                table: "tasks",
-                nullable: true,
-                oldClrType: typeof(string),
-                oldType: "BOOl",
-                oldNullable: true);
-
-            migrationBuilder.AlterColumn<string>(
-                name: "description",
-                table: "tasks",
-                nullable: true,
-                oldClrType: typeof(DateTime),
-                oldType: "TEXT");
+            migrationBuilder.CreateTable(
+                name: "tasks",
+                columns: table => new
+                {
+                    id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    createdate = table.Column<DateTime>(nullable: false),
+                    expdate = table.Column<DateTime>(nullable: false),
+                    status = table.Column<string>(nullable: true),
+                    description = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tasks", x => x.id);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<string>(
-                name: "status",
-                table: "tasks",
-                type: "BOOl",
-                nullable: true,
-                oldClrType: typeof(string),
-                oldNullable: true);
-
-            migrationBuilder.AlterColumn<DateTime>(
-                name: "description",
-                table: "tasks",
-                type: "TEXT",
-                nullable: false,
-                oldClrType: typeof(string),
-                oldNullable: true);
+            migrationBuilder.DropTable(
+                name: "tasks");
         }
     }
 }
+

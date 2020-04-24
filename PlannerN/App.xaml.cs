@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System.IO;
 using System.Windows;
 
@@ -25,8 +26,13 @@ namespace PlannerN
             IConfiguration config = configBuilder.Build();
             services.AddSingleton<IConfiguration>(config);
 
-            services.AddTransient<MainWindow, MainWindow>();
+            ILoggerFactory loggerFactory = new LoggerFactory();
+               //  .AddFile("logs/app-{Date}.log");
 
+            ILogger<MainWindow> logger = loggerFactory.CreateLogger<MainWindow>();
+            services.AddSingleton<ILogger<MainWindow>>(logger);
+
+            services.AddTransient<MainWindow, MainWindow>();
 
             var provider = services.BuildServiceProvider();
 
