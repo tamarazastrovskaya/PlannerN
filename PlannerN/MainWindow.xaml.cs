@@ -16,7 +16,6 @@ namespace PlannerN
         public MainWindow(ILogger<MainWindow> logger)
         {
             this.logger = logger;
-
             logger.LogCritical("Test");
             InitializeComponent();
             var List = new List<Task>();

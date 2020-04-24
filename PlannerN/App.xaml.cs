@@ -24,22 +24,17 @@ namespace PlannerN
             }
             var configBuilder = new ConfigurationBuilder().AddIniFile(ConfigPath);
             IConfiguration config = configBuilder.Build();
-            services.AddSingleton<IConfiguration>(config);
+            services.AddSingleton(config);
 
             ILoggerFactory loggerFactory = new LoggerFactory();
-               //  .AddFile("logs/app-{Date}.log");
-
+               
             ILogger<MainWindow> logger = loggerFactory.CreateLogger<MainWindow>();
+
             services.AddSingleton<ILogger<MainWindow>>(logger);
-
             services.AddTransient<MainWindow, MainWindow>();
-
             var provider = services.BuildServiceProvider();
 
-
-            MainWindow mainWindow = provider.GetService<MainWindow>();
-            mainWindow.Show();
-
+           
         }
     }
 }
